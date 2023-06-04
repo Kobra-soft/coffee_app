@@ -20,14 +20,13 @@ const avatar = require("../../assets/avatar.jpg");
 const HomeScreen = () => {
   return (
     <SafeAreaView
-      style={{ flex: 1, paddingTop: Platform.OS == "android" ? 35 : 0 }}
+      style={{ flex: 1, paddingTop: Platform.OS == "android" ? 40 : 0 }}
     >
-      <ScrollView
-        style={{ flex: 0 /* paddingTop: Platform.OS == "android" ? 35 : 0  */ }}
-      >
-        <StatusBar style="light" backgroundColor="#0C0F14" />
+      <StatusBar style="dark" backgroundColor="#0C0F14" />
+      <ScrollView style={{ flex: 0 }}>
         <View
           style={{
+            backgroundColor: "#151a20",
             padding: SPACING,
             flexDirection: "row",
             justifyContent: "space-between",
