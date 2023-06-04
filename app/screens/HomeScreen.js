@@ -22,12 +22,15 @@ const HomeScreen = () => {
     <SafeAreaView
       style={{ flex: 1, paddingTop: Platform.OS == "android" ? 40 : 0 }}
     >
-      <StatusBar style="dark" backgroundColor="#0C0F14" />
-      <ScrollView style={{ flex: 0 }}>
+      {/* <StatusBar style="dark" backgroundColor="#0C0F14" /> */}
+      <ScrollView
+        style={{
+          padding: SPACING,
+        }}
+      >
         <View
           style={{
-            backgroundColor: "#151a20",
-            padding: SPACING,
+            /* backgroundColor: "#151a20", */
             flexDirection: "row",
             justifyContent: "space-between",
           }}
@@ -79,8 +82,10 @@ const HomeScreen = () => {
             </BlurView>
           </View>
         </View>
-        <View>
-          <Text>Find the best coffee for you</Text>
+        <View style={{ width: "80%", marginVertical: SPACING * 3 }}>
+          <Text style={{ color: colors.white, fontSize: SPACING * 3.5 }}>
+            Find the best coffee for you
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
