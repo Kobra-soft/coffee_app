@@ -104,7 +104,7 @@ const HomeScreen = () => {
           </Text>
         </View>
         <SearchField />
-        <Categories />
+        <Categories style={styles.categoriesText} />
       </ScrollView>
     </SafeAreaView>
   );

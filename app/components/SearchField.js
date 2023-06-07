@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     color: "white",
     width: "100%",
     fontSize: SPACING * 1.9,
-    fontFamily: "ibm_regular",
+    /* fontFamily: "", */
     textAlign: "left",
     alignItems: "center",
     padding: SPACING,

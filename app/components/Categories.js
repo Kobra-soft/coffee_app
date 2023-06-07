@@ -13,14 +13,24 @@ import SPACING from "../config/SPACING";
 const Categories = () => {
   const [activeCategoryId, setActiveCategoryId] = useState(null);
 
+  const handlePress = (id) => {
+    setActiveCategoryId(id);
+  };
+
   return (
     <FlatList
+      /* showsHorizontalScrollIndicator={false} */
       horizontal={true}
       data={categories}
       keyExtractor={(item) => item.id}
-      contentContainerStyle={{ marginVertical: SPACING * 2 }}
+      contentContainerStyle={{
+        marginVertical: SPACING * 2,
+      }}
       renderItem={({ item }) => (
-        <TouchableOpacity style={{ marginRight: SPACING * 2 }}>
+        <TouchableOpacity
+          onPress={() => handlePress(item.id)}
+          style={{ marginRight: SPACING * 2, alignItems: "center" }}
+        >
           <Text
             style={[
               { color: colors.secondary, fontSize: SPACING * 2 },
@@ -29,6 +39,17 @@ const Categories = () => {
           >
             {item.name}
           </Text>
+          {activeCategoryId === item.id && (
+            <View
+              style={{
+                height: SPACING,
+                width: SPACING,
+                backgroundColor: colors.primary,
+                borderRadius: SPACING / 2,
+                marginTop: SPACING / 2,
+              }}
+            />
+          )}
         </TouchableOpacity>
       )}
     />

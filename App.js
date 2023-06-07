@@ -32,7 +32,6 @@ const App = () => {
     "Poppins-Regular": require("./assets/fonts/Poppins_400Regular.ttf"),
     "Poppins-SemiBold": require("./assets/fonts/Poppins_600SemiBold.ttf"),
     "Poppins-Thin": require("./assets/fonts/Poppins_100Thin.ttf"),
-
     "Stratos-Black": require("./assets/fonts/Stratos-Black.otf"),
     "Stratos-Bold": require("./assets/fonts/Stratos-Bold.otf"),
     "Stratos-ExtraBold": require("./assets/fonts/Stratos-ExtraBold.otf"),
