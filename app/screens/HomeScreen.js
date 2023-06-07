@@ -15,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import colors from "../config/colors";
 import { StatusBar } from "expo-status-bar";
 import SearchField from "../components/SearchField";
+import Categories from "../components/Categories";
 
 const avatar = require("../../assets/avatar.jpg");
 
@@ -38,7 +39,7 @@ const HomeScreen = () => {
         >
           <TouchableOpacity
             style={{
-              borderRadius: 20,
+              borderRadius: 5,
               overflow: "hidden",
               width: SPACING * 4,
               height: SPACING * 4,
@@ -63,7 +64,7 @@ const HomeScreen = () => {
               width: SPACING * 4,
               height: SPACING * 4,
               overflow: "hidden",
-              borderRadius: SPACING * 2,
+              borderRadius: SPACING * 0.5,
             }}
           >
             <BlurView
@@ -86,15 +87,24 @@ const HomeScreen = () => {
         <View
           style={{
             /* backgroundColor: "red", */
-            width: "60%",
+            width: "65%",
             marginVertical: SPACING * 3,
           }}
         >
-          <Text style={{ color: colors.white, fontSize: SPACING * 3.5 }}>
+          <Text
+            style={{
+              color: colors.white,
+              fontSize: SPACING * 3.5,
+              fontWeight: "600",
+              fontFamily: "Poppins-SemiBold",
+              lineHeight: 42,
+            }}
+          >
             Find the best coffee for you
           </Text>
         </View>
         <SearchField />
+        <Categories />
       </ScrollView>
     </SafeAreaView>
   );

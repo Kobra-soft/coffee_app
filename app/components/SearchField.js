@@ -18,7 +18,7 @@ const SearchField = () => {
         style={{
           alignItems: "center",
           justifyContent: "center",
-          padding: Platform.OS == "android" ? 0 : 6,
+          padding: Platform.OS == "android" ? 0 : 0,
           color: "white",
         }}
       >
@@ -34,7 +34,7 @@ const SearchField = () => {
           }}
           name="search"
           color={colors.light}
-          size={SPACING * 2}
+          size={SPACING * 2.25}
         />
       </BlurView>
     </View>
@@ -48,7 +48,10 @@ const styles = StyleSheet.create({
     color: "white",
     width: "100%",
     fontSize: SPACING * 1.9,
+    fontFamily: "ibm_regular",
+    textAlign: "left",
+    alignItems: "center",
     padding: SPACING,
-    paddingLeft: Platform.OS == "android" ? SPACING * 5 : SPACING * 4.75,
+    paddingLeft: Platform.OS == "android" ? SPACING * 5 : SPACING * 5.25,
   },
 });
