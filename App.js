@@ -4,7 +4,7 @@ import React from "react";
 import colors from "./app/config/colors";
 import HomeScreen from "./app/screens/HomeScreen";
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
+/* import AppLoading from "expo-app-loading"; */
 import {
   IBMPlexSans_100Thin,
   IBMPlexSans_200ExtraLight,
@@ -16,7 +16,7 @@ import {
 } from "@expo-google-fonts/ibm-plex-sans";
 
 const App = () => {
-  let [fontsLoaded, error] = useFonts({
+  /* let [fontsLoaded, error] =  */ useFonts({
     ibm_thin: IBMPlexSans_100Thin,
     ibm_extralight: IBMPlexSans_200ExtraLight,
     ibm_light: IBMPlexSans_300Light,
@@ -44,9 +44,9 @@ const App = () => {
     "Stratos-Thin": require("./assets/fonts/Stratos-Thin.otf"),
   });
 
-  if (!fontsLoaded) {
+  /*   if (!fontsLoaded) {
     return <AppLoading />;
-  }
+  } */
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.dark }}>
