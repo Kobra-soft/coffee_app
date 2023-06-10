@@ -5,8 +5,8 @@ const categories = [
   { id: 2, name: "Espresso" },
   { id: 3, name: "Latte" },
   { id: 4, name: "Flat White" },
-  { id: 5, name: "Mocha" },
-  { id: 6, name: "Americano" },
+  /*   { id: 5, name: "Mocha" },
+  { id: 6, name: "Americano" }, */
 ];
 
 export default categories;
