@@ -4,7 +4,7 @@ import React from "react";
 import colors from "./app/config/colors";
 import HomeScreen from "./app/screens/HomeScreen";
 import { useFonts } from "expo-font";
-/* import AppLoading from "expo-app-loading"; */
+import AppLoading from "expo-app-loading";
 import {
   IBMPlexSans_100Thin,
   IBMPlexSans_200ExtraLight,
@@ -15,8 +15,19 @@ import {
   IBMPlexSans_700Bold,
 } from "@expo-google-fonts/ibm-plex-sans";
 
+import {
+  Poppins_100Thin,
+  Poppins_200ExtraLight,
+  Poppins_300Light,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+  Poppins_900Black,
+} from "@expo-google-fonts/poppins";
+
 const App = () => {
-  /* let [fontsLoaded, error] =  */ useFonts({
+  let [fontsLoaded, error] = useFonts({
     ibm_thin: IBMPlexSans_100Thin,
     ibm_extralight: IBMPlexSans_200ExtraLight,
     ibm_light: IBMPlexSans_300Light,
@@ -24,14 +35,25 @@ const App = () => {
     ibm_medium: IBMPlexSans_500Medium,
     ibm_semibold: IBMPlexSans_600SemiBold,
     ibm_bold: IBMPlexSans_700Bold,
-    "Poppins-Black": require("./assets/fonts/Poppins_900Black.ttf"),
+
+    poppins_thin: Poppins_100Thin,
+    poppins_extralight: Poppins_200ExtraLight,
+    poppins_light: Poppins_300Light,
+    poppins_regular: Poppins_400Regular,
+    poppins_medium: Poppins_500Medium,
+    poppins_semibold: Poppins_600SemiBold,
+    poppins_bold: Poppins_700Bold,
+    poppins_black: Poppins_900Black,
+
+    /*     "Poppins-Black": require("./assets/fonts/Poppins_900Black.ttf"),
     "Poppins-Bold": require("./assets/fonts/Poppins_700Bold.ttf"),
     "Poppins-ExtraLight": require("./assets/fonts/Poppins_200ExtraLight.ttf"),
     "Poppins-Light": require("./assets/fonts/Poppins_300Light.ttf"),
     "Poppins-Medium": require("./assets/fonts/Poppins_500Medium.ttf"),
     "Poppins-Regular": require("./assets/fonts/Poppins_400Regular.ttf"),
     "Poppins-SemiBold": require("./assets/fonts/Poppins_600SemiBold.ttf"),
-    "Poppins-Thin": require("./assets/fonts/Poppins_100Thin.ttf"),
+    "Poppins-Thin": require("./assets/fonts/Poppins_100Thin.ttf"), */
+
     "Stratos-Black": require("./assets/fonts/Stratos-Black.otf"),
     "Stratos-Bold": require("./assets/fonts/Stratos-Bold.otf"),
     "Stratos-ExtraBold": require("./assets/fonts/Stratos-ExtraBold.otf"),
@@ -44,13 +66,13 @@ const App = () => {
     "Stratos-Thin": require("./assets/fonts/Stratos-Thin.otf"),
   });
 
-  /*   if (!fontsLoaded) {
+  if (!fontsLoaded) {
     return <AppLoading />;
-  } */
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.dark }}>
-      <StatusBar style="dark" backgroundColor="#0C0F14" />
+      <StatusBar style="light" backgroundColor="#0C0F14" />
       <HomeScreen />
     </SafeAreaView>
   );

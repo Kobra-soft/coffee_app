@@ -20,6 +20,7 @@ import Categories from "../components/Categories";
 import coffees from "../config/coffees";
 
 const avatar = require("../../assets/avatar.jpg");
+const avatar3 = require("../../assets/avatar3.png");
 
 const { width } = Dimensions.get("window");
 
@@ -29,7 +30,7 @@ const HomeScreen = () => {
       style={{ flex: 1, paddingTop: Platform.OS == "android" ? 40 : 0 }}
     >
       {/* <StatusBar style="dark" backgroundColor="#0C0F14" /> */}
-      <ScrollView
+      <View
         style={{
           padding: SPACING,
         }}
@@ -47,6 +48,7 @@ const HomeScreen = () => {
               overflow: "hidden",
               width: SPACING * 4,
               height: SPACING * 4,
+              backgroundColor: "#e76a16",
             }}
           >
             <BlurView
@@ -56,140 +58,159 @@ const HomeScreen = () => {
                 alignItems: "center",
               }}
             >
-              <Ionicons
-                name="menu"
-                size={SPACING * 2.5}
-                color={colors.secondary}
-              />
+              <Ionicons name="menu" size={SPACING * 2.5} color={colors.dark} />
             </BlurView>
           </TouchableOpacity>
-          <View
-            style={{
-              width: SPACING * 4,
-              height: SPACING * 4,
-              overflow: "hidden",
-              borderRadius: SPACING * 0.5,
-            }}
-          >
-            <BlurView
-              style={{
-                height: "100%",
-                padding: SPACING / 2,
-              }}
-            >
-              <Image
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: SPACING * 2,
-                }}
-                source={avatar}
-              />
-            </BlurView>
-          </View>
-        </View>
-        <View
-          style={{
-            /* backgroundColor: "red", */
-            width: "65%",
-            marginVertical: SPACING * 3,
-          }}
-        >
-          <Text
-            style={{
-              color: colors.white,
-              fontSize: SPACING * 3.5,
-              fontWeight: "600",
-              fontFamily: "Poppins-SemiBold",
-              lineHeight: 42,
-            }}
-          >
-            Find the best coffee for you
-          </Text>
-        </View>
-        <SearchField />
-        <Categories style={styles.categoriesText} />
 
-        <View
-          style={{
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-          }}
-        >
-          {coffees.map((coffee) => (
+          <TouchableOpacity
+            style={{
+              backgroundColor: "#e76a16",
+              borderRadius: 5,
+              overflow: "hidden",
+            }}
+          >
             <View
-              key={coffee.id}
               style={{
-                width: width / 2 - SPACING * 2,
-                marginBottom: SPACING,
-                borderRadius: SPACING * 2,
+                width: SPACING * 4,
+                height: SPACING * 4,
                 overflow: "hidden",
+                borderRadius: SPACING * 0.5,
               }}
             >
               <BlurView
-                tint="dark"
-                intensity={95}
                 style={{
-                  padding: SPACING,
+                  height: "100%",
+                  padding: SPACING / 2,
                 }}
               >
-                <TouchableOpacity
+                <Image
                   style={{
-                    height: 150,
                     width: "100%",
+                    height: "100%",
+                    borderRadius: SPACING * 2,
+                    borderColor: "#000",
+                    borderWidth: 1.25,
                   }}
-                >
-                  <Image
-                    source={coffee.image}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      borderRadius: SPACING * 2,
-                    }}
-                  />
-
-                  <View
-                    style={{
-                      position: "absolute",
-                      right: 0,
-                      borderBottomStartRadius: SPACING * 3,
-                      borderTopEndRadius: SPACING * 2,
-                      overflow: "hidden",
-                    }}
-                  >
-                    <BlurView
-                      tint="dark"
-                      intensity={70}
-                      style={{
-                        flexDirection: "row",
-                        padding: SPACING - 2,
-                      }}
-                    >
-                      <Ionicons
-                        style={{ marginLeft: SPACING / 2 }}
-                        name="star"
-                        color={colors.primary}
-                        size={SPACING * 1.7}
-                      />
-                      <Text
-                        style={{
-                          color: colors.white,
-                          marginLeft: SPACING / 2,
-                        }}
-                      >
-                        {coffee.rating}
-                      </Text>
-                    </BlurView>
-                  </View>
-                </TouchableOpacity>
-                <Text style={{ color: colors.white }}>{coffee.name}</Text>
-                <Text style={{ color: colors.white }}>{coffee.included}</Text>
+                  source={avatar}
+                />
               </BlurView>
             </View>
-          ))}
+          </TouchableOpacity>
         </View>
-      </ScrollView>
+
+        <ScrollView
+          style={{
+            marginVertical: SPACING * 0,
+            marginTop: SPACING * 2.5,
+            /* paddingTop: SPACING * 1.5, */
+            marginBottom: SPACING * 4,
+            top: -16,
+          }}
+        >
+          <View
+            style={{
+              /* backgroundColor: "red", */
+              width: "65%",
+              marginVertical: SPACING * 3,
+            }}
+          >
+            <Text
+              style={{
+                color: colors.white,
+                fontSize: SPACING * 3.5,
+                fontWeight: "600",
+                /* fontFamily: "Poppins-SemiBold", */
+                fontFamily: "poppins_semibold",
+                lineHeight: 42,
+              }}
+            >
+              Find the best coffee for you
+            </Text>
+          </View>
+          <SearchField />
+          <Categories /* style={styles.categoriesText} */ />
+
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+            }}
+          >
+            {coffees.map((coffee) => (
+              <View
+                key={coffee.id}
+                style={{
+                  width: width / 2 - SPACING * 2,
+                  marginBottom: SPACING,
+                  borderRadius: SPACING * 2,
+                  overflow: "hidden",
+                }}
+              >
+                <BlurView
+                  tint="dark"
+                  intensity={95}
+                  style={{
+                    padding: SPACING,
+                  }}
+                >
+                  <TouchableOpacity
+                    style={{
+                      height: 150,
+                      width: "100%",
+                    }}
+                  >
+                    <Image
+                      source={coffee.image}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: SPACING * 2,
+                      }}
+                    />
+
+                    <View
+                      style={{
+                        position: "absolute",
+                        right: 0,
+                        borderBottomStartRadius: SPACING * 3,
+                        borderTopEndRadius: SPACING * 2,
+                        overflow: "hidden",
+                      }}
+                    >
+                      <BlurView
+                        tint="dark"
+                        intensity={70}
+                        style={{
+                          flexDirection: "row",
+                          padding: SPACING - 2,
+                        }}
+                      >
+                        <Ionicons
+                          style={{ marginLeft: SPACING / 2 }}
+                          name="star"
+                          color={colors.primary}
+                          size={SPACING * 1.7}
+                        />
+                        <Text
+                          style={{
+                            color: colors.white,
+                            marginLeft: SPACING / 2,
+                          }}
+                        >
+                          {coffee.rating}
+                        </Text>
+                      </BlurView>
+                    </View>
+                  </TouchableOpacity>
+                  <Text style={{ color: colors.white }}>{coffee.name}</Text>
+                  <Text style={{ color: colors.white }}>{coffee.included}</Text>
+                </BlurView>
+              </View>
+            ))}
+          </View>
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
