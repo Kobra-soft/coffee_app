@@ -17,6 +17,8 @@ import colors from "../config/colors";
 import SearchField from "../components/SearchField";
 import Categories from "../components/Categories";
 import coffees from "../config/coffees";
+/* import { useNavigation } from "@react-navigation/native"; */
+import TestScreen from "./TestScreen";
 
 const avatar = require("../../assets/avatar.jpg");
 const avatar3 = require("../../assets/avatar3.png");
@@ -24,11 +26,16 @@ const avatar3 = require("../../assets/avatar3.png");
 const { width } = Dimensions.get("window");
 
 const HomeScreen = () => {
+  /*   const navigation = useNavigation(); */
   const [activeCategoryId, setActiveCategoryId] = useState(null);
 
   return (
     <SafeAreaView
-      style={{ flex: 1, paddingTop: Platform.OS == "android" ? 40 : 0 }}
+      style={{
+        flex: 1,
+        backgroundColor: colors.dark,
+        paddingTop: Platform.OS == "android" ? 40 : 0,
+      }}
     >
       {/* <StatusBar style="dark" backgroundColor="#0C0F14" /> */}
       <View
@@ -38,12 +45,12 @@ const HomeScreen = () => {
       >
         <View
           style={{
-            /* backgroundColor: "#151a20", */
             flexDirection: "row",
             justifyContent: "space-between",
           }}
         >
           <TouchableOpacity
+            onPress={() => navigation.navigate("TestScreen")}
             style={{
               borderRadius: 5,
               overflow: "hidden",
@@ -103,26 +110,23 @@ const HomeScreen = () => {
           style={{
             marginVertical: SPACING * 0,
             marginTop: SPACING * 3,
-            /* paddingTop: SPACING * 1.5, */
             marginBottom: SPACING * 0,
             top: -16,
           }}
         >
           <View
             style={{
-              /* backgroundColor: "red", */
-              width: "65%",
+              width: "80%",
               marginVertical: SPACING * 3,
             }}
           >
             <Text
               style={{
                 color: colors.white,
-                fontSize: SPACING * 3.5,
+                fontSize: 56,
                 fontWeight: "600",
-                /* fontFamily: "Poppins-SemiBold", */
-                fontFamily: "poppins_semibold",
-                lineHeight: 42,
+                fontFamily: "bebas_bold",
+                lineHeight: 56,
               }}
             >
               Find the best coffee for you

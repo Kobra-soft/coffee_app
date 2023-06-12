@@ -2,9 +2,17 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import React from "react";
 import colors from "./app/config/colors";
-import HomeScreen from "./app/screens/HomeScreen";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
+import coffees from "./app/config/coffees";
+/* import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack"; */
+import TestScreen from "./app/screens/TestScreen";
+import CoffeeDetailsScreen from "./app/screens/CoffeeDetailsScreen";
+import HomeScreen from "./app/screens/HomeScreen";
+
+/* const Stack = createNativeStackNavigator(); */
+
 import {
   IBMPlexSans_100Thin,
   IBMPlexSans_200ExtraLight,
@@ -28,13 +36,13 @@ import {
 
 const App = () => {
   let [fontsLoaded, error] = useFonts({
-    ibm_thin: IBMPlexSans_100Thin,
+    /*     ibm_thin: IBMPlexSans_100Thin,
     ibm_extralight: IBMPlexSans_200ExtraLight,
     ibm_light: IBMPlexSans_300Light,
     ibm_regular: IBMPlexSans_400Regular,
     ibm_medium: IBMPlexSans_500Medium,
     ibm_semibold: IBMPlexSans_600SemiBold,
-    ibm_bold: IBMPlexSans_700Bold,
+    ibm_bold: IBMPlexSans_700Bold, */
 
     poppins_thin: Poppins_100Thin,
     poppins_extralight: Poppins_200ExtraLight,
@@ -54,7 +62,10 @@ const App = () => {
     "Poppins-SemiBold": require("./assets/fonts/Poppins_600SemiBold.ttf"),
     "Poppins-Thin": require("./assets/fonts/Poppins_100Thin.ttf"), */
 
-    "Stratos-Black": require("./assets/fonts/Stratos-Black.otf"),
+    bebas_reg: require("./assets/fonts/BebasNeue-Regular.ttf"),
+    bebas_bold: require("./assets/fonts/BebasNeue-Bold.ttf"),
+
+    /*     "Stratos-Black": require("./assets/fonts/Stratos-Black.otf"),
     "Stratos-Bold": require("./assets/fonts/Stratos-Bold.otf"),
     "Stratos-ExtraBold": require("./assets/fonts/Stratos-ExtraBold.otf"),
     "Stratos-ExtraLight": require("./assets/fonts/Stratos-ExtraLight.otf"),
@@ -63,18 +74,52 @@ const App = () => {
     "Stratos-Regular": require("./assets/fonts/Stratos-Regular.otf"),
     "Stratos-SemiBold": require("./assets/fonts/Stratos-SemiBold.otf"),
     "Stratos-SemiLight": require("./assets/fonts/Stratos-SemiLight.otf"),
-    "Stratos-Thin": require("./assets/fonts/Stratos-Thin.otf"),
+    "Stratos-Thin": require("./assets/fonts/Stratos-Thin.otf"), */
   });
 
   if (!fontsLoaded) {
     return <AppLoading />;
   }
 
+  // <HomeScreen> and <CoffeeDetailsScreen> are the only screens that are done so far.
+  // To test / view screens! Uncomment the screen you want to view below and comment out the other one.
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.dark }}>
       <StatusBar style="light" backgroundColor="#0C0F14" />
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      <CoffeeDetailsScreen coffee={coffees[4]} />
     </SafeAreaView>
+
+    // NAVIGATION to be added later!!! (after all screens are done) Commented out for now...
+
+    /*     <NavigationContainer>
+      <StatusBar style="light" backgroundColor="#0C0F14" />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Coffee"
+          component={CoffeeDetailsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="TestScreen"
+          component={TestScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+      </Stack.Navigator>
+    </NavigationContainer> */
   );
 };
 

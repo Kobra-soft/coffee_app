@@ -11,6 +11,8 @@
   "dependencies": {
     "@expo-google-fonts/ibm-plex-sans": "^0.2.3",
     "@expo-google-fonts/poppins": "^0.2.3",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/native-stack": "^6.9.12",
     "expo": "^46.0.16",
     "expo-app-loading": "~2.1.0",
     "expo-blur": "^11.2.0",
